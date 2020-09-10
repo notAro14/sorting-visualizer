@@ -1,3 +1,3 @@
 # sorting-visualizer
 
-Created with CodeSandbox
+Sorting algorithm visualizer with React
