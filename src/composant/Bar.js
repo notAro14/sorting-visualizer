@@ -1,13 +1,15 @@
 import React from "react";
 
-export default function Bar({ height }) {
+export default function Bar({ height, bgColor, width }) {
   return (
     <div
+      className="bar"
       style={{
-        width: "10px",
-        backgroundColor: "tomato",
-        height: `${height}%`,
-        margin: "0 0.05rem"
+        width: `${width}px`,
+        backgroundColor: bgColor,
+        height: `${height}px`,
+        margin: "0 1px",
+        display: "inline-block",
       }}
     ></div>
   );

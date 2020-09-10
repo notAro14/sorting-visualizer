@@ -4,8 +4,8 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <div>
-      <SortingVisualizer />;
+    <div className="app">
+      <SortingVisualizer />
     </div>
   );
 }
