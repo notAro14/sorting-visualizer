@@ -15,10 +15,11 @@ export const bubbleSortFunc = (arr) => {
   const nums = [...arr];
   const animations = [];
   let swap = true;
+  let x = 0;
   do {
     swap = false;
     for (let i = 0; i < nums.length; i++) {
-      animations.push({ index: i, swap: nums[i] > nums[i + 1] });
+      animations.push({ index: i, swap: nums[i] > nums[i + 1], x });
       if (nums[i] > nums[i + 1]) {
         const temp = nums[i];
         nums[i] = nums[i + 1];
@@ -27,12 +28,12 @@ export const bubbleSortFunc = (arr) => {
       }
     }
   } while (swap);
-  return { animations };
+  return { nums, animations };
 };
 
-export const bubbleSort = (list, ANIMATION_SPEED) => {
+export const bubbleSort = (list, setList, ANIMATION_SPEED) => {
   const barContainer = document.getElementsByClassName("bar");
-  const { animations } = bubbleSortFunc(list);
+  const { nums, animations } = bubbleSortFunc(list);
   animations.forEach(({ index, swap }, idx) => {
     if (index === 0) {
       const currentBar = barContainer[index].style;
@@ -61,6 +62,7 @@ export const bubbleSort = (list, ANIMATION_SPEED) => {
         setTimeout(() => {
           prevBar.backgroundColor = "white";
           currentBar.backgroundColor = "white";
+          setList(nums);
         }, idx * ANIMATION_SPEED + 500);
       }
     } else {

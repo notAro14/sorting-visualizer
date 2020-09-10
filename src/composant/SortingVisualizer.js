@@ -38,7 +38,7 @@ export default function SortingVisualizer() {
         </button>
         <button
           className="btn"
-          onClick={() => bubbleSort(list, ANIMATION_SPEED)}
+          onClick={() => bubbleSort(list, setList, ANIMATION_SPEED)}
         >
           Bubble Sort
         </button>
